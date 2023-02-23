@@ -34,8 +34,43 @@ for(let i = 0; i < pieces.length; i++) {
 
 }
 
+const bouttonTrier = document.querySelector('.btn-trier');
+bouttonTrier.addEventListener('click', function(){
+    const piecesOrdonnees = Array.from(pieces) 
+    pieces.sort(function(a, b){
+    return b.prix - a.prix;
+    })
+    console.log(pieces)
+})
 
-console.log(pieces)
+const boutonFiltrer = document.querySelector('.btn-filtrer'); 
+boutonFiltrer.addEventListener("click", function () {
+    const piecesFiltrees = pieces.filter(function (piece) {
+        return piece.prix <= 35;
+    });
+   console.log(piecesFiltrees)
+});
+
+const bouttonTrierDecroissant = document.querySelector('.btn-trier-decroisant')
+bouttonTrierDecroissant.addEventListener('click', function(){
+    const piecesOrdonnees = Array.from(pieces);
+    pieces.sort(function(a, b){
+        return a.prix - b.prix;
+
+    })
+    console.log(pieces);
+    
+})
+const boutonNoDescription = document.querySelector(".btn-filterdescription");
+boutonNoDescription.addEventListener("click", function () {
+    const piecesFiltrees = pieces.filter(function (piece) {
+        return piece.description
+    });
+   console.log(piecesFiltrees)
+});
+
+
+
 
 
 

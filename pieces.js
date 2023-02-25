@@ -87,6 +87,13 @@ for(let i = 0; i < noms.length; i++) {
 document.querySelector('.abordable').appendChild(abordablesElements);
 const disponiblePieces = pieces.filter((piece)=>piece.disponible).map((piece) => piece.nom);
 const disponibleElements = document.createElement('ul');
+for(let i = 0; i < disponiblePieces.length; i++) {
+    const nomElementDisponible = document.createElement('li');
+    nomElementDisponible.innerText = disponiblePieces[i];
+    disponibleElements.appendChild(nomElementDisponible)
+}
+
+document.querySelector('.disponible').appendChild(disponibleElements);
 console.log(disponiblePieces);
 
 

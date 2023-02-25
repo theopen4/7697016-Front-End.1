@@ -85,6 +85,10 @@ for(let i = 0; i < noms.length; i++) {
 
 }
 document.querySelector('.abordable').appendChild(abordablesElements);
+const disponiblePieces = pieces.filter((piece)=>piece.disponible).map((piece) => piece.nom);
+const disponibleElements = document.createElement('ul');
+console.log(disponiblePieces);
+
 
 
 

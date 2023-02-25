@@ -70,15 +70,22 @@ const noms = pieces.map(piece => piece.nom);
 // creation of pieces list no unaffordable
 for(let i = pieces.length - 1; i >= 0; i--){
     if(pieces[i].prix > 35){
-        noms.splice(i, 1);
+        noms.splice(i,1);
     }
 }
 console.log(noms);
 // remove unaffordable prices from the list
 
 // creation of the list
-const abordablesElements = createElement('ul')
-// add each name to the list
+const abordablesElements = document.createElement('ul')
+for(let i = 0; i < noms.length; i++) {
+    const nomElements = document.createElement('li');
+    nomElements.innerText = noms[i];
+    abordablesElements.appendChild(nomElements);
+
+}
+document.querySelector('.abordable').appendChild(abordablesElements);
+
 
 
 

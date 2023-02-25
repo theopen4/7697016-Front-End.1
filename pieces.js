@@ -84,12 +84,21 @@ for(let i = 0; i < noms.length; i++) {
     abordablesElements.appendChild(nomElements);
 
 }
+
+// prices  piece is disponible
+const pricePiecesDisponible = pieces.map((piece) => piece.prix)
+for(let i = pieces.length - 1; i >= 0; i--){
+    if(pieces[i].disponible === false){
+        pricePiecesDisponible.splice(i,1);
+    }
+}
+
 document.querySelector('.abordable').appendChild(abordablesElements);
 const disponiblePieces = pieces.filter((piece)=>piece.disponible).map((piece) => piece.nom);
 const disponibleElements = document.createElement('ul');
 for(let i = 0; i < disponiblePieces.length; i++) {
     const nomElementDisponible = document.createElement('li');
-    nomElementDisponible.innerText = disponiblePieces[i];
+    nomElementDisponible.innerText = `${disponiblePieces[i]} - ${pricePiecesDisponible[i]}$ `;
     disponibleElements.appendChild(nomElementDisponible)
 }
 
